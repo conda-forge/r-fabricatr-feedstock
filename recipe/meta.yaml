@@ -1,4 +1,4 @@
-{% set version = "0.10.0" %}
+{% set version = '0.12.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fabricatr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fabricatr/fabricatr_{{ version }}.tar.gz
-  sha256: 52d22a6bb960ea6a11ba3a4bfda56d0bc2b887eccc73c268bc6e7cec9fab024e
+  sha256: 5d0aa06dd25dbe72266797a8b36c9132676c840e242a62cba19f9ddb0642bb65
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -25,10 +25,14 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-backports
     - r-rlang >=0.2.0
+    - r-tibble
   run:
     - r-base
+    - r-backports
     - r-rlang >=0.2.0
+    - r-tibble
 
 test:
   commands:
@@ -43,8 +47,8 @@ about:
     by resampling from existing data sources. This package is faster with 'data.table'
     and 'mvnfast' installed.
   license_family: MIT
-  license_file: 
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
@@ -55,20 +59,20 @@ extra:
 # Package: fabricatr
 # Type: Package
 # Title: Imagine Your Data Before You Collect It
-# Version: 0.8.0
+# Version: 0.12.0
 # Authors@R: c(person("Graeme", "Blair", email = "graeme.blair@ucla.edu", role = c("aut", "cre")), person("Jasper", "Cooper", email = "jjc2247@columbia.edu", role = c("aut")), person("Alexander", "Coppock", email = "alex.coppock@yale.edu", role = c("aut")), person("Macartan", "Humphreys", email = "macartan@gmail.com", role = c("aut")), person("Aaron", "Rudkin", email = "rudkin@ucla.edu", role = c("aut")), person("Neal", "Fultz", email = "nfultz@gmail.com", role = c("aut")))
 # Description: Helps you imagine your data before you collect it. Hierarchical data structures and correlated data can be easily simulated, either from random number generators or by resampling from existing data sources. This package is faster with 'data.table' and 'mvnfast' installed.
 # URL: https://declaredesign.org/r/fabricatr, https://github.com/DeclareDesign/fabricatr
 # BugReports: https://github.com/DeclareDesign/fabricatr/issues
-# Depends: R (>= 3.4.0)
-# Imports: rlang (>= 0.2.0)
+# Depends: R (>= 3.5.0)
+# Imports: rlang (>= 0.2.0), tibble, backports
 # License: MIT + file LICENSE
 # Encoding: UTF-8
-# RoxygenNote: 6.1.1
-# Suggests: testthat, data.table, mvnfast, MASS
+# RoxygenNote: 7.1.1
+# Suggests: testthat, data.table, mvnfast, MASS, extraDistr
 # NeedsCompilation: no
-# Packaged: 2019-03-12 00:43:35 UTC; gdblair
+# Packaged: 2021-01-09 00:36:57 UTC; ac2595
 # Author: Graeme Blair [aut, cre], Jasper Cooper [aut], Alexander Coppock [aut], Macartan Humphreys [aut], Aaron Rudkin [aut], Neal Fultz [aut]
 # Maintainer: Graeme Blair <graeme.blair@ucla.edu>
 # Repository: CRAN
-# Date/Publication: 2019-03-12 06:02:50 UTC
+# Date/Publication: 2021-01-09 07:30:02 UTC
