@@ -5,11 +5,9 @@ Home: https://declaredesign.org/r/fabricatr, https://github.com/DeclareDesign/fa
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fabricatr-feedstock/blob/master/LICENSE.txt)
 
 Summary: Helps you imagine your data before you collect it. Hierarchical data structures and correlated data can be easily simulated, either from random number generators or by resampling from existing data sources. This package is faster with 'data.table' and 'mvnfast' installed.
-
-
 
 Current build status
 ====================
