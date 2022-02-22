@@ -23,16 +23,13 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-backports
-    - r-rlang >=0.2.0
-    - r-tibble
+    - r-rlang >=1.0.0
   run:
     - r-base
-    - r-backports
-    - r-rlang >=0.2.0
-    - r-tibble
+    - r-rlang >=1.0.0
 
 test:
   commands:
