@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fabricatr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fabricatr/fabricatr_{{ version }}.tar.gz
-  sha256: fbcce8c191bcc2bb80c9824d261e10684c243971c547fcded2188ebdf1fbb5f8
+  sha256: 1d196a6108ef39e11a1702af70832cfb948b4fd0da7bd029791a21075b04d1c3
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
